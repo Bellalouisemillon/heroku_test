@@ -9,7 +9,7 @@ def send_message(email, message):
   return requests.post(
     "https://api.mailgun.net/v3/{}/messages".format(mail_domain),
       auth=("api", mail_api_key),
-      data={"from": "Excited User <mailgun@{}>".format(mail_domain),
-        "to": [email],
+      data={"from": "Excited User <mailgun@{mail_domain}>".format(mail_domain),
+        "to": [],
         "subject": "Greetings!",
         "text": message})
